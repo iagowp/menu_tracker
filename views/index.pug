@@ -17,8 +17,8 @@ block content
         label(for="preparation") Preparo
         textarea(name="preparation", cols="30", rows="10")
       div(class="form-group")
-        label(for="complementTypeId") Tipo de complemento
-        select(name="complementTypeId", class="form-control")
+        label(for="ComplementTypeId") Tipo de complemento
+        select(name="ComplementTypeId", class="form-control")
           each ctype in complementTypes
             option(value=`${ctype.id}`)= ctype.name
       input(type="submit" class="btn btn-default")
@@ -32,4 +32,4 @@ block content
           strong
             = complement.name
           | &nbsp;
-          a(href="/users/" + complement.id + "/destroy", class="btn btn-xs btn-warning") delete
+          a(href="/complement/" + complement.id + "/destroy", class="btn btn-xs btn-warning") delete
