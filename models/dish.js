@@ -6,14 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Dish.associate = function(models) {
     // associations can be defined here
-    models.Dish.hasOne(models.Protein, {
+    models.Dish.belongsTo(models.Protein, {
       foreignKey: {
         allowNull: false
       }
     });
-    models.Dish.hasOne(models.Sauce);
-    models.Dish.hasMany(models.Complement, { as: 'Complement1' });
-    models.Dish.hasMany(models.Complement, { as: 'Complement2' });
+    models.Dish.belongsTo(models.Sauce);
+    models.Dish.belongsTo(models.Complement, { as: 'Complement1' });
+    models.Dish.belongsTo(models.Complement, { as: 'Complement2' });
   };
   return Dish;
 };

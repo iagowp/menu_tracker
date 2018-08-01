@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Sauce.associate = function(models) {
     // associations can be defined here
-    models.Sauce.hasMany(models.ProteinType);
+    models.Sauce.belongsToMany(models.ProteinType, {through: 'ProteinTypeSauce'});
   };
   return Sauce;
 };

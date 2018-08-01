@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env DEBUG=express-sequelize node ./bin/www",
+    "start": "cross-env DEBUG=express-sequelize ./node_modules/.bin/nodemon ./bin/www",
     "test": "npm run test-unit && npm run test-integration",
     "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
     "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
@@ -26,6 +25,7 @@
     "dotenv": "^6.0.0",
     "expect.js": "^0.3.1",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
     "supertest": "^3.1.0"
   }
 }

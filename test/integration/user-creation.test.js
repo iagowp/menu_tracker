@@ -1,7 +1,6 @@
 'use strict';
 
 var app      = require('../../app');
-var Bluebird = require('bluebird');
 var expect   = require('expect.js');
 var request  = require('supertest');
 
@@ -13,7 +12,7 @@ describe('user creation page', function () {
   beforeEach(function () {
     this.models = require('../../models');
 
-    return Bluebird.all([
+    return Promise.all([
       this.models.Task.destroy({ truncate: true }),
       this.models.User.destroy({ truncate: true })
     ]);
